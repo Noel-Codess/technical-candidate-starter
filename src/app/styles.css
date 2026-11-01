@@ -1,0 +1,64 @@
+:root {
+  --ink: #11231f;
+  --paper: #f3f0e8;
+  --accent: #f45d35;
+  --line: rgba(17, 35, 31, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(244, 93, 53, 0.13), transparent 30rem),
+    var(--paper);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 30px 0 36px; }
+
+.eyebrow {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 56px;
+  align-items: end;
+  padding: 72px 0 70px;
+}
+
+.kicker { color: var(--accent); margin: 0 0 14px; font-size: 13px; font-weight: 800; letter-spacing: 0.16em; }
+h1 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(64px, 9vw, 126px); line-height: 0.84; letter-spacing: -0.065em; margin: 0; }
+.lede { border-left: 3px solid var(--accent); padding-left: 22px; font-size: 17px; line-height: 1.6; margin: 0 0 8px; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+article { min-height: 275px; padding: 28px; border-right: 1px solid var(--line); }
+article:last-child { border-right: 0; }
+.number { color: var(--accent); font-size: 12px; font-weight: 800; }
+h2 { font-family: Georgia, serif; font-size: 30px; font-weight: 400; margin: 52px 0 18px; }
+ul { list-style: none; margin: 0; padding: 0; line-height: 1.9; font-size: 14px; }
+li::before { content: "—"; color: var(--accent); margin-right: 8px; }
+.catalogue { display: flex; flex-wrap: wrap; gap: 8px; }
+.catalogue span { border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; font-size: 12px; }
+.open-ended { background: var(--ink); color: var(--paper); }
+.open-ended p { color: rgba(243, 240, 232, 0.68); line-height: 1.6; }
+footer { display: flex; justify-content: space-between; padding-top: 24px; font-size: 12px; }
+code { color: var(--accent); font-weight: 700; }
+
+@media (max-width: 760px) {
+  main { width: min(100% - 28px, 1180px); }
+  .hero, .grid { grid-template-columns: 1fr; }
+  .hero { gap: 36px; padding: 48px 0; }
+  article { border-right: 0; border-bottom: 1px solid var(--line); min-height: 230px; }
+  article:last-child { border-bottom: 0; }
+  footer { gap: 16px; flex-direction: column; }
+}
